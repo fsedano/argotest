@@ -9,7 +9,7 @@ stringData:
 apiVersion: pulumi.com/v1
 kind: Stack
 metadata:
-  name: nginx-k8s-stack3
+  name: nginx-k8s-stack4
 spec:
   workspaceTemplate:
     spec:
