@@ -15,7 +15,7 @@ spec:
         app: inventory
     spec:
       containers:
-      - image: k3d-myreg:49474/inventory:latest
+      - image: k3d-myreg:49474/nginx:latest
         name: inventory
         env:
         - name: PG_USER
