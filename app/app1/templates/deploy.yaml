@@ -17,24 +17,3 @@ spec:
       containers:
       - image: k3d-myreg:49474/nginx:latest
         name: inventory
-        env:
-        - name: PG_USER
-          valueFrom:
-            secretKeyRef:
-              name: pgcluster-app
-              key: user
-        - name: PG_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: pgcluster-app
-              key: password
-        - name: PG_HOST
-          valueFrom:
-            secretKeyRef:
-              name: pgcluster-app
-              key: host
-        - name: PG_PORT
-          valueFrom:
-            secretKeyRef:
-              name: pgcluster-app
-              key: port
