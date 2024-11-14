@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: pulumi-api-secret
+type: Opaque
+stringData:
+  accessToken: "onetwo"
+---
+apiVersion: pulumi.com/v1
+kind: Stack
+metadata:
+  name: nginx-k8s-stack2
+spec:
+  envRefs:
+    PULUMI_ACCESS_TOKEN:
+      type: Secret
+      secret:
+        name: pulumi-api-secret
+        key: accessToken
+  stack: stk1
+  projectRepo: https://github.com/pulumi/examples
+  repoDir: /kubernetes-yaml
+  branch: "refs/heads/master"
+  destroyOnFinalize: true
