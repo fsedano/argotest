@@ -21,7 +21,7 @@ spec:
         name: pulumi-api-secret
         key: accessToken
   stack: stk1
-  projectRepo: https://github.com/pulumi/examples
-  repoDir: /kubernetes-yaml
+  projectRepo: https://github.com/fsedano/argotest
+  repoDir: /app/pulumiapp
   branch: "refs/heads/master"
   destroyOnFinalize: true
