@@ -11,6 +11,9 @@ kind: Stack
 metadata:
   name: nginx-k8s-stack2
 spec:
+workspaceTemplate:
+    spec:
+      image: pulumi/pulumi:3.134.1-nonroot
   envRefs:
     PULUMI_ACCESS_TOKEN:
       type: Secret
