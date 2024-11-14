@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: inventory
+  name: inventory
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: inventory
+  template:
+    metadata:
+      labels:
+        app: inventory
+    spec:
+      containers:
+      - image: k3d-myreg:49474/inventory:latest
+        name: inventory
+        env:
+        - name: PG_USER
+          valueFrom:
+            secretKeyRef:
+              name: pgcluster-app
+              key: user
+        - name: PG_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: pgcluster-app
+              key: password
+        - name: PG_HOST
+          valueFrom:
+            secretKeyRef:
+              name: pgcluster-app
+              key: host
+        - name: PG_PORT
+          valueFrom:
+            secretKeyRef:
+              name: pgcluster-app
+              key: port
