@@ -9,11 +9,11 @@ stringData:
 apiVersion: pulumi.com/v1
 kind: Stack
 metadata:
-  name: nginx-k8s-stack4
+  name: nginx-k8s-stack5
 spec:
   workspaceTemplate:
     spec:
-      image: pulumi/pulumi:3.134.1-nonroot
+      image: k3d-myreg:49474/pulumifull:latest
   envRefs:
     PULUMI_ACCESS_TOKEN:
       type: Secret
